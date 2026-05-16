@@ -1,4 +1,9 @@
-# boot.py or main.py — no secrets in this file!
 import ugit
 
-ugit.pull_all()  # reset_after defaults to False; reset manually after verifying
+ugit.wificonnect()
+changes = ugit.check_for_updates(isconnected=True)
+print(changes)
+# {'new': ['/newfile.py'], 'changed': ['/boot.py'], 'deleted': []}
+
+if changes["new"] or changes["changed"]:
+    ugit.pull_all(isconnected=True)
