@@ -1,5 +1,6 @@
 # Device credentials — never commit this file
 config.json
+secret.py
 
 # Backup files created by ugit
 ugit.backup
